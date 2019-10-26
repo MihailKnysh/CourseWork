@@ -1,0 +1,15 @@
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.csprojAssemblyReference.cache
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.HistoryForm.resources
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.StartForm.resources
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.Properties.Resources.resources
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.csproj.GenerateResource.cache
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.csproj.CoreCompileInputs.cache
+C:\Bear\Univer\Cource_work\C_Work\C_Work\bin\Debug\C_Work.exe.config
+C:\Bear\Univer\Cource_work\C_Work\C_Work\bin\Debug\C_Work.exe
+C:\Bear\Univer\Cource_work\C_Work\C_Work\bin\Debug\C_Work.pdb
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.TestForm.resources
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.exe
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.pdb
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.UserDataForm.resources
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.ResultForm.resources
+C:\Bear\Univer\Cource_work\C_Work\C_Work\obj\Debug\C_Work.Resource1.resources
