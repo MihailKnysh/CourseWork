@@ -48,46 +48,46 @@
   <ItemGroup>
     <Compile Include="Data.cs" />
     <Compile Include="FM.cs" />
-    <Compile Include="HistoryForm\HistoryForm.cs">
+    <Compile Include="Forms\HistoryForm\HistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HistoryForm\HistoryForm.Designer.cs">
+    <Compile Include="Forms\HistoryForm\HistoryForm.Designer.cs">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Methods.cs" />
-    <Compile Include="ResultForm\ResultForm.cs">
+    <Compile Include="Forms\ResultForm\ResultForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResultForm\ResultForm.Designer.cs">
+    <Compile Include="Forms\ResultForm\ResultForm.Designer.cs">
       <DependentUpon>ResultForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartForm\StartForm.cs">
+    <Compile Include="Forms\StartForm\StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartForm\StartForm.Designer.cs">
+    <Compile Include="Forms\StartForm\StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestForm\TestForm.cs">
+    <Compile Include="Forms\TestForm\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestForm\TestForm.Designer.cs">
+    <Compile Include="Forms\TestForm\TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserDataForm\UserDataForm.cs">
+    <Compile Include="Forms\UserDataForm\UserDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserDataForm\UserDataForm.Designer.cs">
+    <Compile Include="Forms\UserDataForm\UserDataForm.Designer.cs">
       <DependentUpon>UserDataForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="HistoryForm\HistoryForm.resx">
+    <EmbeddedResource Include="Forms\HistoryForm\HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResultForm\ResultForm.resx">
+    <EmbeddedResource Include="Forms\ResultForm\ResultForm.resx">
       <DependentUpon>ResultForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StartForm\StartForm.resx">
+    <EmbeddedResource Include="Forms\StartForm\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -99,10 +99,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TestForm\TestForm.resx">
+    <EmbeddedResource Include="Forms\TestForm\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserDataForm\UserDataForm.resx">
+    <EmbeddedResource Include="Forms\UserDataForm\UserDataForm.resx">
       <DependentUpon>UserDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
