@@ -1,8 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace C_Work
 {
+    class D
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+    }
+
     static class Data
     {
         private const string connectionString = @"Data Source=DESKTOP-8AL13S1;Initial Catalog=Testing_system;Integrated Security=True";
@@ -11,9 +17,11 @@ namespace C_Work
         {
             var trueAnswers = new List<string>();
             string sqlExpression = "SELECT Answer FROM TaskAnswer";
+
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+
                 var command = new SqlCommand(sqlExpression, connection);
                 var reader = command.ExecuteReader();
 
@@ -26,8 +34,10 @@ namespace C_Work
                         trueAnswers.Add(ans.ToString());
                     }
                 }
+
                 reader.Close();
             }
+
             return trueAnswers;
         }
 
@@ -35,9 +45,11 @@ namespace C_Work
         {
             var imagePathes = new List<string>();
             string sqlExpression = "SELECT PathToImg FROM TaskAnswer";
+
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+
                 var command = new SqlCommand(sqlExpression, connection);
                 var reader = command.ExecuteReader();
 
@@ -49,8 +61,10 @@ namespace C_Work
                         imagePathes.Add(path.ToString());
                     }
                 }
+
                 reader.Close();
             }
+
             return imagePathes;
         }
     }

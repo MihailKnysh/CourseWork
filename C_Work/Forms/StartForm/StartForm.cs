@@ -6,9 +6,7 @@ namespace C_Work
     public partial class StartForm : Form
     {
         public StartForm() => InitializeComponent();
-
         public StartForm(ResultForm resultForm) => InitializeComponent();
-
         public StartForm(HistoryForm historyForm) => InitializeComponent();
 
         private void Start_Button(object sender, EventArgs e)
@@ -30,6 +28,5 @@ namespace C_Work
             this.Close();
             Application.Exit();
         }
-
     }
 }

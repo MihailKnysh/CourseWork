@@ -21,16 +21,17 @@ namespace C_Work
         private void HistoryForm_Load(object sender, EventArgs e)
         {
             string sql = "SELECT * FROM History";
+
             using (var connection = new SqlConnection(Methods.connectionString))
             {
                 connection.Open();
-                var adapter = new SqlDataAdapter(sql, connection);
 
+                var adapter = new SqlDataAdapter(sql, connection);
                 var ds = new DataSet();
 
                 adapter.Fill(ds);
 
-                // Отображаем данные
+                // Visualisation data
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns["Duration"].Visible = false;
                 dataGridView1.Columns["Date"].Visible = false;

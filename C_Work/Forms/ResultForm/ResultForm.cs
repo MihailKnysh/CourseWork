@@ -9,17 +9,13 @@ namespace C_Work
         private static int listSize = 21;
         private int numOfTrueAnswers = TestForm.counterOfTrueAnswers;
         private int mark;
-        
 
         public ResultForm() => InitializeComponent();
-
         public ResultForm(UserDataForm testForm) => InitializeComponent();
 
         private void ResultForm_Load(object sender, EventArgs e)
         {
             label_Number.Text = numOfTrueAnswers.ToString();
-            
-
             mark = numOfTrueAnswers * 100 / listSize;
             label_Mark.Text = mark.ToString();
             label_Duration.Text = TestForm.DurationOfTest.ToLongTimeString();//проверить, что вноситься в бд

@@ -6,7 +6,6 @@ namespace C_Work
     public partial class UserDataForm : Form
     {
         public UserDataForm() => InitializeComponent();
-
         public UserDataForm(TestForm tForm) => InitializeComponent();
 
         private void Next_Button(object sender, EventArgs e)
@@ -20,6 +19,7 @@ namespace C_Work
             //else
             {
                 var resultForm = new ResultForm(this);
+
                 resultForm.label_FirstName.Text = textBox_FirstName.Text;
                 resultForm.label_SecondName.Text = textBox_SecondName.Text;
                 resultForm.label_Group.Text = textBox_Group.Text;
