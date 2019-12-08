@@ -81,7 +81,9 @@ namespace C_Work
                 return;
             }
             else
+            {
                 label_ErrorMassage.Visible = false;
+            }
             
             //else if (parametr != imagePathes.Count)
             //{

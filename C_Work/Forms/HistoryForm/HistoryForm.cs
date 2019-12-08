@@ -33,9 +33,9 @@ namespace C_Work
 
                 // Visualisation data
                 dataGridView1.DataSource = ds.Tables[0];
-                dataGridView1.Columns["Duration"].Visible = false;
-                dataGridView1.Columns["Date"].Visible = false;
-                dataGridView1.Columns["Time"].Visible = false;
+                //dataGridView1.Columns["Duration"].Visible = false;
+                //dataGridView1.Columns["Date"].Visible = false;
+                //dataGridView1.Columns["Time"].Visible = false;
             }
         }
     }

@@ -9,6 +9,9 @@ namespace C_Work
         private static int listSize = 21;
         private int numOfTrueAnswers = TestForm.counterOfTrueAnswers;
         private int mark;
+        private DateTime date = DateTime.Now;
+        private DateTime time = DateTime.Now;
+        private DateTime duration = DateTime.Now;
 
         public ResultForm() => InitializeComponent();
         public ResultForm(UserDataForm testForm) => InitializeComponent();
@@ -27,30 +30,35 @@ namespace C_Work
 
             string firstName = label_FirstName.Text;
             string secondName = label_SecondName.Text;
+            string sGroup = label_Group.Text;
 
-            string sqlExpression = "INSERT INTO History (FirstName, SecondName, CorrectAnswers, Mark) " +
-                "VALUES (@firstName, @secondName, @num, @mark)";
-
+            string sqlExpression = "INSERT History VALUES " +
+                "(@FirstName, @SecondName, @Date, @Time, @CorrectAnswers, @Mark, @Duration, @StudyGroup)";
             var connection = new SqlConnection(Methods.connectionString);
-            
-                connection.Open();
+
+            connection.Open();
+
             var command = new SqlCommand(sqlExpression, connection);
 
-            command.Parameters.AddWithValue("firstName", firstName);
-            command.Parameters.AddWithValue("secondName", secondName);
-            command.Parameters.AddWithValue("num", numOfTrueAnswers);
-            command.Parameters.AddWithValue("mark", mark);
-            //SqlParameter firstNameParameter = new SqlParameter("@firstName", firstName);
-            //command.Parameters.Add(firstNameParameter);
+            command.Parameters.AddWithValue("FirstName", firstName);
+            command.Parameters.AddWithValue("SecondName", secondName);
+            command.Parameters.AddWithValue("Date", date);
+            command.Parameters.AddWithValue("Time", time);
+            command.Parameters.AddWithValue("CorrectAnswers", numOfTrueAnswers);
+            command.Parameters.AddWithValue("Mark", mark);
+            command.Parameters.AddWithValue("Duration", label_Duration.Text/*duration*//*TestForm.DurationOfTest*/);
+            command.Parameters.AddWithValue("StudyGroup", sGroup);
 
-            //SqlParameter secondNameParameter = new SqlParameter("@secondName", secondName);
-            //command.Parameters.Add(secondNameParameter);
+            command.ExecuteNonQuery();
 
-            //SqlParameter numTrueAnswersParameter = new SqlParameter("@num", numOfTrueAnswers);
-            //command.Parameters.Add(numTrueAnswersParameter);
+            connection.Close();
 
-            //SqlParameter markParameter = new SqlParameter("@mark", mark);
-            //command.Parameters.Add(markParameter);
+
+            //command.Parameters.AddWithValue("firstName", firstName);
+            //command.Parameters.AddWithValue("secondName", secondName);
+            //command.Parameters.AddWithValue("num", numOfTrueAnswers);
+            //command.Parameters.AddWithValue("mark", mark);
+
 
 
             //Fill DB
