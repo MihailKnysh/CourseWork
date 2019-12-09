@@ -9,6 +9,7 @@ namespace C_Work
     {
         public static int counterOfTrueAnswers = 0;
         public static DateTime DurationOfTest;
+        public static int numTasks = 9;
         private DateTime stopWatch;
         private static int parametr = 0;//Counter of questions
         private const int numAnswers = 4;//Number of radio buttons
@@ -90,9 +91,11 @@ namespace C_Work
             RadioButton[] answerButtons = { answer1, answer2, answer3, answer4 };
             
             if (answerButtons[positionOfTrueAnswer].Checked)
+            {
                 counterOfTrueAnswers++;
-
-            if (parametr != imagePathes.Count)
+            }
+            //!1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+            if (parametr != numTasks/*imagePathes.Count*/)
             {
                 Methods.ShowBinaryCodeInLabel(label_BinaryXYZ, trueAnswers[parametr].Length);
                 Methods.ShowProgressInLabel(label_Progress, parametr, trueAnswers.Count);

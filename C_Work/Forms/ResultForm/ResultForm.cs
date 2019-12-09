@@ -6,7 +6,7 @@ namespace C_Work
 {
     public partial class ResultForm : Form
     {
-        private static int listSize = 21;
+        private static int listSize = TestForm.numTasks;
         private int numOfTrueAnswers = TestForm.counterOfTrueAnswers;
         private int mark;
         private DateTime date = DateTime.Now;
@@ -33,7 +33,7 @@ namespace C_Work
             string sGroup = label_Group.Text;
 
             string sqlExpression = "INSERT History VALUES " +
-                "(@FirstName, @SecondName, @Date, @Time, @CorrectAnswers, @Mark, @Duration, @StudyGroup)";
+                "(@FirstName, @SecondName, @Date, @Time, @CorrectAnswers, @Mark, @Duration, @StudyGroup, @NumTasks)";
             var connection = new SqlConnection(Methods.connectionString);
 
             connection.Open();
@@ -48,6 +48,7 @@ namespace C_Work
             command.Parameters.AddWithValue("Mark", mark);
             command.Parameters.AddWithValue("Duration", label_Duration.Text/*duration*//*TestForm.DurationOfTest*/);
             command.Parameters.AddWithValue("StudyGroup", sGroup);
+            command.Parameters.AddWithValue("NumTasks", TestForm.numTasks);
 
             command.ExecuteNonQuery();
 
