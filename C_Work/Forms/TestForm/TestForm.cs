@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace C_Work
@@ -8,8 +9,10 @@ namespace C_Work
     public partial class TestForm : Form
     {
         public static int counterOfTrueAnswers = 0;
+        public static int numTasks = 10;
         public static DateTime DurationOfTest;
-        public static int numTasks = 9;
+        public static string progressOfBaseOperations = String.Empty;
+        public StringBuilder stringBuilder = new StringBuilder(21);
         private DateTime stopWatch;
         private static int parametr = 0;//Counter of questions
         private const int numAnswers = 4;//Number of radio buttons
@@ -62,7 +65,7 @@ namespace C_Work
             RadioButton[] answerButtons = { answer1, answer2, answer3, answer4 };
 
             Methods.ShowBinaryCodeInLabel(label_BinaryXYZ, trueAnswers[parametr].Length);
-            Methods.ShowProgressInLabel(label_Progress, parametr, trueAnswers.Count);
+            Methods.ShowProgressInLabel(label_Progress, parametr, numTasks/*trueAnswers.Count*/);
             Methods.GenerateFalseAnswers(answerButtons,
                 trueAnswers[parametr], numAnswers, out positionOfTrueAnswer);
 
@@ -89,16 +92,33 @@ namespace C_Work
             //else if (parametr != imagePathes.Count)
             //{
             RadioButton[] answerButtons = { answer1, answer2, answer3, answer4 };
-            
+
             if (answerButtons[positionOfTrueAnswer].Checked)
             {
                 counterOfTrueAnswers++;
+
+                //progressOfBaseOperations += "+";
+
+                stringBuilder.Append("+ ");
+
+                //MessageBox.Show(progressOfBaseOperations);
+                MessageBox.Show(stringBuilder.ToString());
             }
-            //!1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+            else
+            {
+                stringBuilder.Append("- ");
+
+                //progressOfBaseOperations += "-";
+
+                //MessageBox.Show(progressOfBaseOperations);
+                MessageBox.Show(stringBuilder.ToString());
+            }
+            
+
             if (parametr != numTasks/*imagePathes.Count*/)
             {
                 Methods.ShowBinaryCodeInLabel(label_BinaryXYZ, trueAnswers[parametr].Length);
-                Methods.ShowProgressInLabel(label_Progress, parametr, trueAnswers.Count);
+                Methods.ShowProgressInLabel(label_Progress, parametr, numTasks/*trueAnswers.Count*/);
                 Methods.GenerateFalseAnswers(answerButtons,
                     trueAnswers[parametr], numAnswers, out positionOfTrueAnswer);
 
@@ -117,6 +137,9 @@ namespace C_Work
                 //resultForm.label8.Text = this.label5.Text;
                 //resultForm.label9.Text = this.label6.Text;
                 parametr = 0;
+                progressOfBaseOperations = stringBuilder.ToString();
+
+                //MessageBox.Show(stringBuilder.ToString());
             }
         }
     }

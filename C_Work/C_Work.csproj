@@ -82,6 +82,11 @@
     <Compile Include="Forms\UserDataForm\UserDataForm.Designer.cs">
       <DependentUpon>UserDataForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Testing_systemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Testing_systemDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\HistoryForm\HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +120,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Testing_systemDataSet.xsc">
+      <DependentUpon>Testing_systemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Testing_systemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Testing_systemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Testing_systemDataSet.xss">
+      <DependentUpon>Testing_systemDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

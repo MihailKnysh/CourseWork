@@ -10,13 +10,13 @@ namespace C_Work
 
         private void Next_Button(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(textBox_FirstName.Text) || string.IsNullOrWhiteSpace(textBox_FirstName.Text) ||
-            //    string.IsNullOrEmpty(textBox_SecondName.Text) || string.IsNullOrWhiteSpace(textBox_SecondName.Text) ||
-            //    string.IsNullOrEmpty(textBox_Group.Text) || string.IsNullOrWhiteSpace(textBox_Group.Text))
-            //{
-            //    label_ErrorMassage.Visible = true;
-            //}
-            //else
+            if (string.IsNullOrEmpty(textBox_FirstName.Text) || string.IsNullOrWhiteSpace(textBox_FirstName.Text) ||
+                string.IsNullOrEmpty(textBox_SecondName.Text) || string.IsNullOrWhiteSpace(textBox_SecondName.Text) ||
+                string.IsNullOrEmpty(textBox_Group.Text) || string.IsNullOrWhiteSpace(textBox_Group.Text))
+            {
+                label_ErrorMassage.Visible = true;
+            }
+            else
             {
                 var resultForm = new ResultForm(this);
 

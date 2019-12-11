@@ -33,7 +33,7 @@ namespace C_Work
             string sGroup = label_Group.Text;
 
             string sqlExpression = "INSERT History VALUES " +
-                "(@FirstName, @SecondName, @Date, @Time, @CorrectAnswers, @Mark, @Duration, @StudyGroup, @NumTasks)";
+                "(@FirstName, @SecondName, @Date, @Time, @CorrectAnswers, @Mark, @Duration, @StudyGroup, @NumTasks, @Progress7)";
             var connection = new SqlConnection(Methods.connectionString);
 
             connection.Open();
@@ -49,6 +49,7 @@ namespace C_Work
             command.Parameters.AddWithValue("Duration", label_Duration.Text/*duration*//*TestForm.DurationOfTest*/);
             command.Parameters.AddWithValue("StudyGroup", sGroup);
             command.Parameters.AddWithValue("NumTasks", TestForm.numTasks);
+            command.Parameters.AddWithValue("Progress7", TestForm.progressOfBaseOperations);
 
             command.ExecuteNonQuery();
 
@@ -63,7 +64,7 @@ namespace C_Work
 
 
             //Fill DB
-
+            TestForm.progressOfBaseOperations = String.Empty;
             var startForm = new StartForm(this);
             startForm.Show();
             this.Hide();
